@@ -18,7 +18,8 @@ public class Main {
             System.out.println("Option two: View All Students");
             System.out.println("Option three: Delete Student");
             System.out.println("Option four: Search for a Student");
-            System.out.println("Option five: Exit Program");
+            System.out.println("Option five: Update student records");
+            System.out.println("Option seven: Exit Program");
             System.out.print("Selection: ");
 
             int option = sc.nextInt();
