@@ -9,6 +9,10 @@ public class Student {
         this.gpa = gpa;
     }
 
+    public int getStudentID(){
+        return this.studentID;
+    }
+
     @Override
     public String toString() {
         return "Student{" + "studentID=" + studentID + ", name=" + name + ", gpa=" + gpa + '}';

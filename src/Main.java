@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -7,6 +8,11 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to Student Management System");
         ArrayList<Student> students = new ArrayList<>();
+        students.add(new Student(123456, "Mark Henry", 2.89));
+        students.add(new Student(192344, "Mary Doe", 3.11));
+        students.add(new Student(112910, "Liam Jackson", 2.4));
+        students.add(new Student(345611, "Mark Henry", 4.0));
+
         while (true) {
 
             System.out.println("--------------------------------------");
@@ -51,6 +57,34 @@ public class Main {
                 }
 
             }else if (option == 3) {
+
+                System.out.println("Delete Student");
+
+                System.out.print("Enter the ID of the student you want to delete: ");
+                int studentID = sc.nextInt();
+                sc.nextLine();
+
+                System.out.println("Are you sure you want to permanently delete this students record? y/n");
+                String cont = sc.next();
+
+
+                if (Objects.equals(cont, "y") || Objects.equals(cont, "Y")) {
+                    Iterator<Student> iterator = students.iterator();
+
+                    while(iterator.hasNext()){
+                        Student student = iterator.next();
+                        if (student.getStudentID() == studentID){
+                            iterator.remove();
+                            System.out.println("Student data deleted.");
+                            break;
+                        }
+
+                    }
+
+                } else if (cont.equalsIgnoreCase("N")) {
+                    System.out.println("Exiting to menu");
+                    break;
+                }
 
             }else if (option == 4) {
                 System.out.println("Exiting Program...");
