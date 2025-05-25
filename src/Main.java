@@ -20,7 +20,8 @@ public class Main {
             System.out.println("Option one: Add Student");
             System.out.println("Option two: View All Students");
             System.out.println("Option three: Delete Student");
-            System.out.println("Option four: Exit Program");
+            System.out.println("Option four: Search for a Student");
+            System.out.println("Option five: Exit Program");
             System.out.print("Selection: ");
 
             int option = sc.nextInt();
@@ -87,7 +88,37 @@ public class Main {
                     break;
                 }
 
-            }else if (option == 4) {
+            } else if (option == 4) {
+                System.out.println("Search for a student");
+                System.out.print("Search by ID or by name?(ID/name): ");
+                while(true) {
+
+                    String searchValue = sc.nextLine();
+
+
+                    if (searchValue.equalsIgnoreCase("ID")) {
+                        System.out.print("Enter the student ID:");
+                        int studentID = sc.nextInt();
+                        sc.nextLine();
+
+                        for (Student student : students) {
+                            if (student.getStudentID() == studentID) {
+                                System.out.println("Student Found");
+                                System.out.println(student);
+                                break;
+                            }
+                        }
+                        System.out.println("Continue? y/n");
+                        String cont = sc.next();
+                        if (Objects.equals(cont, "n") || Objects.equals(cont, "N")) {
+                            break;
+                        }
+                    }
+
+
+                }
+
+            } else if (option == 5) {
                 System.out.println("Exiting Program...");
                 break;
             }
