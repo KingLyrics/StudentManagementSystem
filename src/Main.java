@@ -68,7 +68,7 @@ public class Main {
                 String cont = sc.next();
 
 
-                if (Objects.equals(cont, "y") || Objects.equals(cont, "Y")) {
+                if (cont.equalsIgnoreCase("Y")) {
                     Iterator<Student> iterator = students.iterator();
 
                     while(iterator.hasNext()){
