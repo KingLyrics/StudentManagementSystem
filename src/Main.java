@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
 
 
 public class Main {
@@ -12,7 +9,7 @@ public class Main {
         students.add(new Student(123456, "Mark Henry", 2.89));
         students.add(new Student(192344, "Mary Doe", 3.11));
         students.add(new Student(112910, "Liam Jackson", 2.4));
-        students.add(new Student(345611, "Mark Henry", 4.0));
+        students.add(new Student(345611, "Frank Ocean", 4.0));
 
         while (true) {
 
@@ -46,7 +43,7 @@ public class Main {
 
                     System.out.println("Continue? y/n");
                     String cont = sc.next();
-                    if (Objects.equals(cont, "n") || Objects.equals(cont, "N")) {
+                    if (cont.equalsIgnoreCase("N")) {
                         break;
                     }
                 }
@@ -112,6 +109,25 @@ public class Main {
                         String cont = sc.next();
                         if (Objects.equals(cont, "n") || Objects.equals(cont, "N")) {
                             break;
+                        }
+                    }else if (searchValue.equalsIgnoreCase("name")){
+                        System.out.println("*Case sensitive*");
+                        System.out.print("Enter the students name: ");
+                        String studentName = sc.nextLine();
+
+                        for (Student student : students){
+                           if(student.getName().equals(studentName)){
+                               System.out.println("Student record found.");
+                               System.out.println(student);
+                               break;
+                           }
+                        }
+
+                        System.out.println("Continue? y/n");
+                        String cont = sc.next();
+                        if (cont.equalsIgnoreCase("n")) {
+                            break;
+
                         }
                     }
 

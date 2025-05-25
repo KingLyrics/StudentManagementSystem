@@ -13,6 +13,10 @@ public class Student {
         return this.studentID;
     }
 
+    public String getName() {
+        return this.name;
+    }
+
     @Override
     public String toString() {
         return "Student{" + "studentID=" + studentID + ", name=" + name + ", gpa=" + gpa + '}';
