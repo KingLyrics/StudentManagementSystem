@@ -135,6 +135,9 @@ public class Main {
                 }
 
             } else if (option == 5) {
+                System.out.println("Update Student Records");
+
+            } else if (option == 7) {
                 System.out.println("Exiting Program...");
                 break;
             }
