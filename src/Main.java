@@ -146,4 +146,18 @@ public class Main {
         }
 
     }
+
+    private static void iterateList(ArrayList<Student> students, int studentID) {
+        Iterator<Student> iterator = students.iterator();
+
+        while(iterator.hasNext()){
+            Student student = iterator.next();
+            if (student.getStudentID() == studentID){
+                iterator.remove();
+                System.out.println("Student data deleted.");
+                break;
+            }
+
+        }
+    }
 }
