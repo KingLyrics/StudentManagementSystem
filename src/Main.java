@@ -19,7 +19,7 @@ public class Main {
             System.out.println("Option three: Delete Student");
             System.out.println("Option four: Search for a Student");
             System.out.println("Option five: Update student records");
-            System.out.println("Option seven: Exit Program");
+            System.out.println("Option six: Exit Program");
             System.out.print("Selection: ");
 
             int option = sc.nextInt();
@@ -138,7 +138,7 @@ public class Main {
 
 
 
-            } else if (option == 7) {
+            } else if (option == 6) {
                 System.out.println("Exiting Program...");
                 break;
             }
