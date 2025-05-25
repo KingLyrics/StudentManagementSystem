@@ -1,7 +1,7 @@
 public class Student {
     private final int studentID;
-    private final String name;
-    private final double gpa;
+    private  String name;
+    private  double gpa;
 
     Student(int studentID, String name, double gpa) {
         this.studentID = studentID;
