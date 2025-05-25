@@ -17,6 +17,14 @@ public class Student {
         return this.name;
     }
 
+    public String updateName(String newName){
+        return newName = this.name;
+    }
+
+    public double updateGpa(double newGpa){
+        return newGpa = this.gpa;
+    }
+
     @Override
     public String toString() {
         return "Student{" + "studentID=" + studentID + ", name=" + name + ", gpa=" + gpa + '}';
