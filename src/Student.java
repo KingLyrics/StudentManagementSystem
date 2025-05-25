@@ -17,12 +17,12 @@ public class Student {
         return this.name;
     }
 
-    public String updateName(String newName){
-        return newName = this.name;
+    public void updateName(String newName){
+        this.name = newName;
     }
 
-    public double updateGpa(double newGpa){
-        return newGpa = this.gpa;
+    public void updateGpa(double newGpa){
+        this.gpa = newGpa;
     }
 
     @Override

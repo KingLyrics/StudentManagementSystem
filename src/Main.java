@@ -69,17 +69,7 @@ public class Main {
 
 
                 if (cont.equalsIgnoreCase("Y")) {
-                    Iterator<Student> iterator = students.iterator();
-
-                    while(iterator.hasNext()){
-                        Student student = iterator.next();
-                        if (student.getStudentID() == studentID){
-                            iterator.remove();
-                            System.out.println("Student data deleted.");
-                            break;
-                        }
-
-                    }
+                    iterateListAndDelete(students, studentID);
 
                 } else if (cont.equalsIgnoreCase("N")) {
                     System.out.println("Exiting to menu");
@@ -137,6 +127,16 @@ public class Main {
 
             } else if (option == 5) {
                 System.out.println("Update Student Records");
+                System.out.print("Please enter the students ID:");
+
+                int studentID = sc.nextInt();
+                sc.nextLine();
+                System.out.print("Update name or Gpa?(name/gpa) : ");
+                String selection = sc.nextLine();
+               iterateAndUpdate(students, studentID,selection);
+
+
+
 
             } else if (option == 7) {
                 System.out.println("Exiting Program...");
@@ -147,7 +147,7 @@ public class Main {
 
     }
 
-    private static void iterateList(ArrayList<Student> students, int studentID) {
+    private static void iterateListAndDelete(ArrayList<Student> students, int studentID) {
         Iterator<Student> iterator = students.iterator();
 
         while(iterator.hasNext()){
@@ -159,5 +159,42 @@ public class Main {
             }
 
         }
+    }
+
+    private static void iterateAndUpdate(ArrayList<Student> students, int studentID, String selection) {
+        Iterator<Student> iterator = students.iterator();
+        Scanner sc = new Scanner(System.in);
+
+        if (selection.equalsIgnoreCase("name")){
+            System.out.print("Enter the new name:");
+            String newName = sc.nextLine();
+
+            while(iterator.hasNext()){
+                Student student = iterator.next();
+                if (student.getStudentID() == studentID){
+                    student.updateName(newName);
+                    System.out.println("Student name updated.");
+                    System.out.println("Modified student field: " + student);
+                    break;
+                }
+
+            }
+        } else if (selection.equalsIgnoreCase("gpa")) {
+            System.out.print("Enter the new GPA:");
+            double newGpa = sc.nextDouble();
+
+            while(iterator.hasNext()){
+                Student student = iterator.next();
+                if (student.getStudentID() == studentID){
+                    student.updateGpa(newGpa);
+                    System.out.println("Student GPA updated.");
+                    System.out.println("Modified student field: " + student);
+                    break;
+                }
+
+            }
+        }
+
+
     }
 }
